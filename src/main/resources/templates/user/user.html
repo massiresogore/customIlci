@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+	<th:block th:insert="~{_commun :: head}"></th:block>
+
+<body>
+
+	<th:block th:insert="~{_commun :: header}"></th:block>
+	
+	<main class="container-fluid">
+		<h2 class="text-center">Gestion étudiant</h2>
+		
+		<table class="table table-strepid">
+			<tr class="table-dark">
+				<th>ID</th>
+				<th>Sexe</th>
+				<th>Prénom</th>
+				<th>Nom</th>
+				<th>Login</th>
+				<th>Password</th>
+				<th>Statut</th>
+				<th>Action</th>
+			</tr>
+			
+			<tr>
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.sexe}"></td>
+				<td th:text="${user.prenom}"></td>
+				<td th:text="${user.nom}"></td>
+				<td th:text="${user.login}"></td>
+				<td th:text="${user.mdp}"></td>
+				<td th:text="${user.statut}"></td>
+				<td>
+					<a th:href="@{/user/update/__${user.id}__}">UP</a>
+					<a th:href="@{/user/delete/__${user.id}__}">DEL</a>
+				</td>
+			</tr>
+			
+		</table>
+		
+		<a th:href="@{/user}">Retour</a>
+		
+	</main>
+	
+	<th:block th:insert="~{_commun :: footer}"></th:block>
+
+</body>
+</html>
+
+
+
+
+

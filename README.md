@@ -7,4 +7,4 @@ dans _commun.html
 - 1 , true
 - 2 , true
 
-    # customIlci
+    # customIlci (avec Basic auth Spring-boot)

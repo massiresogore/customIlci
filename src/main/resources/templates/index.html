@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+	<th:block th:insert="~{_commun :: head}"></th:block>
+
+<body>
+<span style="font-size: 2rem">
+	Bienvenue <span style="color: orange;font-size: 2rem" th:text="${userDetail.getUsername()}"></span>
+</span>
+<!--<h1 sec:authorize="isAutheticated">		<a th:href="@{/logout}">logout</a>-->
+</h1>
+
+	<th:block th:insert="~{_commun :: header}">
+	</th:block>
+	
+	<main class="container-fluid">
+		<p>
+		
+			<h2>école de commerce à paris</h2>
+			<img th:src="@{'images/photo.avif'}" alt="photo" />
+			BIENVENUE CHEZ ILCI
+			Une histoire, Un projet, Une ambition
+		</p>
+		<p>
+			Fort de notre expertise développée depuis 20 ans, notre école de commerce à Paris construit 
+			ses programmes de formations en fonction des compétences demandées par les entreprises qui 
+			recrutent, et actualise ses contenus chaque année pour proposer des diplômés compétitifs 
+			sur le marché.
+		</p>
+		<p>
+			Des étudiants en provenance de nombreux pays se réunissent pour former 
+			une promotion internationale et unique chaque année. Intégrer l’Institut 
+			de Langues et de Commerce International est une aventure principalement 
+			humaine qui vous invite à découvrir de nombreuses cultures depuis un même lieu, 
+			le centre économique de la France, Paris.
+			Formez-vous au management, au marketing, à la communication, au digital, 
+			à la logistique, au luxe, au tourisme ou encore en langues avec l’anglais, 
+			le français, le chinois, le coréen etc.
+		</p>
+	</main>
+	
+	<th:block th:insert="~{_commun :: footer}"></th:block>
+
+</body>
+</html>
+
+
+
+
+

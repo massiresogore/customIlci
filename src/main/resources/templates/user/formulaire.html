@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+	<th:block th:insert="~{_commun :: head}"></th:block>
+
+<body>
+
+	<th:block th:insert="~{_commun :: header}"></th:block>
+	
+	<main class="container-fluid">
+		<h2 class="text-center">Ajouter un étudiant</h2>
+		
+		<form method="post" th:action="@{/user/insert}" th:object="${user}">
+			
+			<input type="hidden" th:field="*{id}"/>	
+
+			  <div class="mb-3">
+			    <label class="form-label">Name</label>
+			    <input type="text" class="form-control" th:field="*{name}">
+			  </div>
+			<div class="mb-3">
+			    <label class="form-label">Full name</label>
+			    <input type="text" class="form-control" th:field="*{fullname}">
+			  </div>
+			<div class="mb-3">
+			    <label class="form-label">Username</label>
+			    <input type="text" class="form-control" th:field="*{username}">
+			  </div>
+
+			<!--Hidden input-->
+			  <div class="mb-3"  th:if="${user.username != null}">
+			    <input type="hidden" class="form-control"  th:field="*{password}">
+			  </div>
+
+			  <div class="mb-3" th:unless="${user.username != null}">
+			    <label class="form-label">Password</label>
+				  <input type="password" class="form-control"  th:field="*{password}">
+			  </div>
+
+
+			  
+			  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+		
+	</main>
+	
+	<th:block th:insert="~{_commun :: footer}"></th:block>
+
+</body>
+</html>
+
+
+
+
+
